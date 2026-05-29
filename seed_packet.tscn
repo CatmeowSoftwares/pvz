@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://cpgfysmiyrxr0"]
+
+[ext_resource type="Texture2D" uid="uid://gsya8fgpqfvq" path="res://background.png" id="1_7wu6j"]
+[ext_resource type="Script" uid="uid://c21b1mhsn4k3h" path="res://seed_packet.gd" id="1_24r2x"]
+[ext_resource type="Texture2D" uid="uid://d3d8540smh8du" path="res://icon.svg" id="1_a1cqr"]
+
+[node name="SeedPacket" type="TextureRect" unique_id=994651710]
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 50.0
+offset_bottom = 69.0
+texture = ExtResource("1_7wu6j")
+script = ExtResource("1_24r2x")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=9555289]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 63.0
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1909709393]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="PlantIcon" type="TextureRect" parent="MarginContainer/VBoxContainer" unique_id=2035919797]
+layout_mode = 2
+texture = ExtResource("1_a1cqr")
+
+[node name="Price" type="Label" parent="MarginContainer/VBoxContainer" unique_id=11216148]
+layout_mode = 2
+text = "100"
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=723579377]
+layout_mode = 0
+offset_right = 48.0
+offset_bottom = 67.0
+max_value = 1.0
+value = 1.0
+fill_mode = 3
+show_percentage = false
+
+[node name="Timer" type="Timer" parent="." unique_id=1319873127]
+one_shot = true
+
+[node name="Button" type="Button" parent="." unique_id=178574319]
+layout_mode = 0
+offset_right = 48.0
+offset_bottom = 67.0
+text = "this"
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

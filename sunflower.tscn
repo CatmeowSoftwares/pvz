@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://bvbprm3ktkl6s"]
+
+[ext_resource type="PackedScene" uid="uid://w6lc2dk18u7f" path="res://plant.tscn" id="1_oiv3v"]
+[ext_resource type="Script" uid="uid://b8k75gqibfime" path="res://sunflower.gd" id="2_2g1xv"]
+[ext_resource type="Texture2D" uid="uid://b15sf18co1ick" path="res://sunflower.png" id="2_e2fdc"]
+
+[node name="Sunflower" unique_id=246331118 instance=ExtResource("1_oiv3v")]
+script = ExtResource("2_2g1xv")
+
+[node name="Sprite2D" parent="." index="0" unique_id=1496789748]
+texture = ExtResource("2_e2fdc")
+
+[node name="Timer" type="Timer" parent="." index="1" unique_id=248620572]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
