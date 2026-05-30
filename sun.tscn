@@ -7,6 +7,8 @@
 size = Vector2(32, 32)
 
 [node name="Sun" type="Area2D" unique_id=101492036]
+collision_layer = 8
+collision_mask = 0
 script = ExtResource("1_iveel")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=729249486]

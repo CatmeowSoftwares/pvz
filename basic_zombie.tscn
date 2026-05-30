@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://dhb3jbw5nc40h"]
+
+[ext_resource type="PackedScene" uid="uid://bwkxmg2lu2len" path="res://zombie.tscn" id="1_mvbjr"]
+[ext_resource type="Texture2D" uid="uid://bsh2sx4hq5fk3" path="res://zombie.png" id="2_8bu2s"]
+[ext_resource type="Script" uid="uid://bn25w3870vn3t" path="res://basic_zombie.gd" id="2_uuh5p"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uuh5p"]
+size = Vector2(22, 63)
+
+[node name="BasicZombie" unique_id=1642079834 instance=ExtResource("1_mvbjr")]
+script = ExtResource("2_uuh5p")
+
+[node name="Sprite2D" parent="." index="0" unique_id=1832379334]
+texture = ExtResource("2_8bu2s")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1" unique_id=1247785514]
+position = Vector2(-1, 0.5)
+shape = SubResource("RectangleShape2D_uuh5p")

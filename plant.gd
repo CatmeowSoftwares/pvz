@@ -1,1 +1,1 @@
-class_name Plant extends Node2D
+class_name Plant extends Area2D

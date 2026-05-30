@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://bhta00lr0gmdy"]
+
+[ext_resource type="Script" uid="uid://itnd3q6ntdap" path="res://pea.gd" id="1_tmfjw"]
+[ext_resource type="Texture2D" uid="uid://cf5y47c653urg" path="res://pea.png" id="2_tg1px"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lpc76"]
+radius = 4.0
+
+[node name="Pea" type="Area2D" unique_id=155670206]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("1_tmfjw")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1719263396]
+texture = ExtResource("2_tg1px")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1214956554]
+shape = SubResource("CircleShape2D_lpc76")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

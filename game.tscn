@@ -1,12 +1,8 @@
 [gd_scene format=3 uid="uid://dwcksw3h8o6b0"]
 
 [ext_resource type="Script" uid="uid://b6w2ybgcglj0r" path="res://game.gd" id="1_80nbo"]
-[ext_resource type="Texture2D" uid="uid://d3d8540smh8du" path="res://icon.svg" id="4_7jktm"]
 [ext_resource type="Texture2D" uid="uid://qk5a58ob24pk" path="res://sun.png" id="4_fc0e3"]
 [ext_resource type="Texture2D" uid="uid://dyc82n1cv16iq" path="res://field.png" id="4_ryrav"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_feb5d"]
-size = Vector2(300, 200)
 
 [node name="Game" type="Node2D" unique_id=962997742]
 script = ExtResource("1_80nbo")
@@ -54,18 +50,18 @@ columns = 9
 
 [node name="PlantPreview" type="Sprite2D" parent="GridSomethingSomethingSomething" unique_id=1079762618]
 visible = false
-texture = ExtResource("4_7jktm")
+centered = false
 
 [node name="CursorPlantPreview" type="Sprite2D" parent="GridSomethingSomethingSomething" unique_id=902129849]
 visible = false
-texture = ExtResource("4_7jktm")
+centered = false
 
-[node name="Area2D" type="Area2D" parent="GridSomethingSomethingSomething" unique_id=1124545662]
-position = Vector2(203, 149)
+[node name="Timer" type="Timer" parent="." unique_id=1235195263]
+autostart = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="GridSomethingSomethingSomething/Area2D" unique_id=182795890]
-position = Vector2(-2, 30)
-shape = SubResource("RectangleShape2D_feb5d")
+[node name="SunTimer" type="Timer" parent="." unique_id=46925850]
+wait_time = 2.0
+autostart = true
 
-[connection signal="mouse_entered" from="GridSomethingSomethingSomething/Area2D" to="." method="_on_area_2d_mouse_entered"]
-[connection signal="mouse_exited" from="GridSomethingSomethingSomething/Area2D" to="." method="_on_area_2d_mouse_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="SunTimer" to="." method="_on_sun_timer_timeout"]

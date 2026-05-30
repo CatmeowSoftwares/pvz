@@ -2,15 +2,58 @@
 
 [ext_resource type="PackedScene" uid="uid://w6lc2dk18u7f" path="res://plant.tscn" id="1_oiv3v"]
 [ext_resource type="Script" uid="uid://b8k75gqibfime" path="res://sunflower.gd" id="2_2g1xv"]
-[ext_resource type="Texture2D" uid="uid://b15sf18co1ick" path="res://sunflower.png" id="2_e2fdc"]
+[ext_resource type="Texture2D" uid="uid://dpkw1o6lstxfn" path="res://sunflower-Sheet.png" id="4_gj0q7"]
+
+[sub_resource type="Animation" id="Animation_2g1xv"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_gj0q7"]
+resource_name = "idle"
+length = 1.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ugw2w"]
+_data = {
+&"RESET": SubResource("Animation_2g1xv"),
+&"idle": SubResource("Animation_gj0q7")
+}
 
 [node name="Sunflower" unique_id=246331118 instance=ExtResource("1_oiv3v")]
 script = ExtResource("2_2g1xv")
 
 [node name="Sprite2D" parent="." index="0" unique_id=1496789748]
-texture = ExtResource("2_e2fdc")
+texture = ExtResource("4_gj0q7")
+hframes = 8
 
 [node name="Timer" type="Timer" parent="." index="1" unique_id=248620572]
 autostart = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="2" unique_id=1937509735]
+libraries/ = SubResource("AnimationLibrary_ugw2w")
+autoplay = &"idle"
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
