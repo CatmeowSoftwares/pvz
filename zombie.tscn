@@ -1,16 +1,5 @@
 [gd_scene format=3 uid="uid://bwkxmg2lu2len"]
 
-[ext_resource type="Script" uid="uid://calmpbitrwnuc" path="res://zombie.gd" id="1_uiaus"]
+[ext_resource type="PackedScene" uid="uid://bfhynv7c1wxm5" path="res://character.tscn" id="1_uiaus"]
 
-[node name="Zombie" type="Area2D" unique_id=1642079834]
-collision_layer = 2
-script = ExtResource("1_uiaus")
-
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1832379334]
-
-[node name="EatTimer" type="Timer" parent="." unique_id=805234157]
-autostart = true
-
-[connection signal="area_entered" from="." to="." method="_on_area_entered"]
-[connection signal="area_exited" from="." to="." method="_on_area_exited"]
-[connection signal="timeout" from="EatTimer" to="." method="_on_eat_timer_timeout"]
+[node name="Zombie" unique_id=572293525 instance=ExtResource("1_uiaus")]

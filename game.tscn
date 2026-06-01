@@ -57,6 +57,7 @@ visible = false
 centered = false
 
 [node name="Timer" type="Timer" parent="." unique_id=1235195263]
+wait_time = 10.0
 autostart = true
 
 [node name="SunTimer" type="Timer" parent="." unique_id=46925850]
