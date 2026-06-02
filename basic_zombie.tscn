@@ -5,14 +5,14 @@
 [ext_resource type="Script" uid="uid://bn25w3870vn3t" path="res://basic_zombie.gd" id="2_uuh5p"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uuh5p"]
-size = Vector2(22, 63)
+size = Vector2(16, 40)
 
 [node name="BasicZombie" unique_id=1642079834 instance=ExtResource("1_mvbjr")]
 script = ExtResource("2_uuh5p")
 
-[node name="Sprite2D" parent="." index="0" unique_id=1832379334]
+[node name="Sprite2D" parent="." index="0" unique_id=1360504298]
 texture = ExtResource("2_8bu2s")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1" unique_id=1247785514]
-position = Vector2(-1, 0.5)
+[node name="CollisionShape2D" parent="." index="1" unique_id=728956919]
+position = Vector2(0, 12)
 shape = SubResource("RectangleShape2D_uuh5p")

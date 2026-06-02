@@ -6,9 +6,12 @@ signal planted
 @onready var plant_icon: TextureRect = $MarginContainer/VBoxContainer/PlantIcon
 var price: int
 var plant: PackedScene
+var recharge: float 
 func _ready() -> void:
 	get_tree().current_scene.sun_changed.connect(_on_sun_changed)
 	planted.connect(_on_planted)
+	timer.wait_time = recharge
+	progress_bar.max_value = recharge
 func _process(delta: float) -> void:
 	progress_bar.value = timer.time_left
 

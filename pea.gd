@@ -8,5 +8,6 @@ func _on_body_entered(body: Node2D) -> void:
 
 
 func _on_area_entered(area: Area2D) -> void:
-	area.normal_damage()
-	queue_free()
+	if area is Zombie:
+		area.normal_damage()
+		queue_free()

@@ -42,10 +42,13 @@ _data = {
 &"idle": SubResource("Animation_gj0q7")
 }
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2g1xv"]
+size = Vector2(16, 16)
+
 [node name="Sunflower" unique_id=246331118 instance=ExtResource("1_oiv3v")]
 script = ExtResource("2_2g1xv")
 
-[node name="Sprite2D" parent="." index="0" unique_id=1496789748]
+[node name="Sprite2D" parent="." index="0" unique_id=1360504298]
 texture = ExtResource("4_gj0q7")
 hframes = 8
 
@@ -55,5 +58,9 @@ autostart = true
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." index="2" unique_id=1937509735]
 libraries/ = SubResource("AnimationLibrary_ugw2w")
 autoplay = &"idle"
+
+[node name="CollisionShape2D" parent="." index="3" unique_id=728956919]
+position = Vector2(16, 16)
+shape = SubResource("RectangleShape2D_2g1xv")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

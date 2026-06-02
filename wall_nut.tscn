@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://c8rkhyg4e6gmo"]
+
+[ext_resource type="PackedScene" uid="uid://w6lc2dk18u7f" path="res://plant.tscn" id="1_e80lg"]
+[ext_resource type="Texture2D" uid="uid://1tabhaq8td60" path="res://wall_nut.png" id="2_hyhpj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yod3b"]
+size = Vector2(16, 16)
+
+[node name="WallNut" unique_id=572293525 instance=ExtResource("1_e80lg")]
+health = 40
+
+[node name="Sprite2D" parent="." index="0" unique_id=1360504298]
+texture = ExtResource("2_hyhpj")
+
+[node name="CollisionShape2D" parent="." index="1" unique_id=728956919]
+position = Vector2(16, 16)
+shape = SubResource("RectangleShape2D_yod3b")

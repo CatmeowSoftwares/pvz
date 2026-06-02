@@ -2,5 +2,10 @@
 
 [ext_resource type="Script" uid="uid://ml2meeika0qj" path="res://character.gd" id="1_glpr6"]
 
-[node name="Character" type="Area2D" unique_id=572293525]
+[node name="Character" type="Area2D" unique_id=1964616842]
 script = ExtResource("1_glpr6")
+metadata/_custom_type_script = "uid://ml2meeika0qj"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1360504298]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=728956919]

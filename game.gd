@@ -46,10 +46,12 @@ func _ready() -> void:
 	sun_changed.emit(sun)
 	for plant_data in Plants.plants:
 		var seed_packet = preload("uid://cpgfysmiyrxr0").instantiate()
-		seed_packets.add_child(seed_packet)
 		seed_packet.plant = plant_data["Scene"]
 		seed_packet.price = plant_data["Price"]
+		seed_packet.recharge = plant_data["Recharge"]
+		seed_packets.add_child(seed_packet)
 		seed_packet.plant_icon.texture = plant_data["Icon"]
+		
 	#move_camera_to_zombies()
 func plant(cost: int, plant: Plant):
 	if sun < cost:

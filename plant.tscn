@@ -1,10 +1,11 @@
 [gd_scene format=3 uid="uid://w6lc2dk18u7f"]
 
 [ext_resource type="PackedScene" uid="uid://bfhynv7c1wxm5" path="res://character.tscn" id="1_t03al"]
+[ext_resource type="Script" uid="uid://c8ks8d1jku2gj" path="res://plant.gd" id="2_mbetm"]
 
 [node name="Plant" unique_id=572293525 instance=ExtResource("1_t03al")]
+collision_mask = 2
+script = ExtResource("2_mbetm")
 
-[node name="Sprite2D" type="Sprite2D" parent="." index="0" unique_id=1288670724]
+[node name="Sprite2D" parent="." index="0" unique_id=1360504298]
 centered = false
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1" unique_id=1457601734]
