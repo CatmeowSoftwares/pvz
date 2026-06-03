@@ -54,7 +54,6 @@ centered = false
 
 [node name="CursorPlantPreview" type="Sprite2D" parent="GridSomethingSomethingSomething" unique_id=902129849]
 visible = false
-centered = false
 
 [node name="Timer" type="Timer" parent="." unique_id=1235195263]
 autostart = true

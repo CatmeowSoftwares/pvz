@@ -28,7 +28,7 @@ func move_camera_to_plants():
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
 		cursor_plant_preview.position = event.global_position
-		plant_preview.position = event.global_position.snapped(Vector2(48, 48))
+		plant_preview.position = (event.global_position + Vector2(-16, 16)).snapped(Vector2(48, 48))
 	if event is InputEventMouseButton:
 		if event.pressed and not event.is_echo():
 			if current_seed_selected:
