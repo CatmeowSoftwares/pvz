@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://bdx3rr2k7qo1s"]
+
+[ext_resource type="Script" uid="uid://by3kbbn2am7of" path="res://plant_tile.gd" id="1_krwww"]
+
+[node name="PlantTile" type="Area2D" unique_id=1551522852]
+script = ExtResource("1_krwww")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]
